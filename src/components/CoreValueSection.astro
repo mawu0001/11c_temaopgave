@@ -1,0 +1,22 @@
+---
+import CoreValueCard from "./CoreValueCard.astro";
+
+const { data, theme } = Astro.props;
+console.log(data);
+---
+
+<section data-theme={theme}>
+  {data.map((values) => <CoreValueCard {values} />)}
+</section>
+
+<!--   {data.map((employee) => <EmployeeCard {employee} />)} -->
+
+<style>
+  [data-theme="dark"] {
+    --bg-section: var(--black);
+    --text-section: var(--white);
+    --bg-card: var(--grey);
+    --card-text: var(--black);
+    /* brød tekst: #595566 */
+  }
+</style>

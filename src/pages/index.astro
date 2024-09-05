@@ -1,22 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import EmployeeSection from "../components/EmployeeSection.astro";
+import CoreValueSection from "../components/CoreValueSection.astro";
+
 const url =
   "https://raw.githubusercontent.com/mawu0001/frontend-design/main/resources/json/employees.json";
 
 const employeeData = await fetch(url).then((res) => res.json());
 
-const firstThreeEmployees = employeeData.slice(0, 3);
+const url_corevalues =
+  "https://raw.githubusercontent.com/mawu0001/frontend-design/main/resources/json/corevalues.json";
+const coreValues = await fetch(url_corevalues).then((res) => res.json());
 ---
 
 <BaseLayout title="Home">
-  <article class="flow">
-    <h2>lorem</h2>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit culpa
-      tenetur ullam adipisci soluta, veritatis distinctio sunt labore officia
-      quis impedit officiis nulla et ex quos exercitationem? Eos, repellat
-      repudiandae!
-    </p>
-  </article>
+  <!-- <CoreValueSection data={coreValues} theme="dark" /> -->
 </BaseLayout>

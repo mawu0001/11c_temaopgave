@@ -1,14 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import EmployeeSection from "../components/EmployeeSection.astro";
-const url =
+import CoreValueSection from "../components/CoreValueSection.astro";
+const url_employee =
   "https://raw.githubusercontent.com/mawu0001/frontend-design/main/resources/json/employees.json";
-
-const employeeData = await fetch(url).then((res) => res.json());
-
+const employeeData = await fetch(url_employee).then((res) => res.json());
 const firstThreeEmployees = employeeData.slice(0, 3);
+
+const url_corevalues =
+  "https://raw.githubusercontent.com/mawu0001/frontend-design/main/resources/json/corevalues.json";
+const coreValues = await fetch(url_corevalues).then((res) => res.json());
 ---
 
 <BaseLayout title="About">
-  <EmployeeSection data={firstThreeEmployees} theme="dark" />
+  <EmployeeSection data={firstThreeEmployees} />
+  <CoreValueSection data={coreValues} />
 </BaseLayout>
