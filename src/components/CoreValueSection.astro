@@ -2,11 +2,10 @@
 import CoreValueCard from "./CoreValueCard.astro";
 
 const { data, theme } = Astro.props;
-console.log(data);
 ---
 
 <section data-theme={theme}>
-  {data.map((values) => <CoreValueCard {values} />)}
+  {data.values.map((corevalues) => <CoreValueCard {corevalues} />)}
 </section>
 
 <!--   {data.map((employee) => <EmployeeCard {employee} />)} -->
