@@ -1,8 +1,7 @@
 ---
-const { values } = Astro.props;
-const { title, subtitle, text } = values;
+const { corevalues } = Astro.props;
+const { title, description, text } = corevalues;
 ---
 
 <h3>{title}</h3>
-<p>{subtitle}</p>
-<button>{text}</button>
+<p>{description}</p>
