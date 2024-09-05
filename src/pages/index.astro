@@ -1,16 +1,26 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import EmployeeSection from "../components/EmployeeSection.astro";
+const url =
+  "https://raw.githubusercontent.com/mawu0001/frontend-design/main/resources/json/employees.json";
 
+const employeeData = await fetch(url).then((res) => res.json());
+
+const firstThreeEmployees = employeeData.slice(0, 3);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Home">
+  <EmployeeSection data={employeeData} theme="dark" />
+  <EmployeeSection data={employeeData} />
+  <EmployeeSection data={firstThreeEmployees} theme="dark" />
+
+  <article class="flow">
+    <h2>lorem</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit culpa
+      tenetur ullam adipisci soluta, veritatis distinctio sunt labore officia
+      quis impedit officiis nulla et ex quos exercitationem? Eos, repellat
+      repudiandae!
+    </p>
+  </article>
+</BaseLayout>
