@@ -1,0 +1,13 @@
+---
+import ProjectionsCard from "./ProjectionsCard.astro";
+
+const { data } = Astro.props;
+---
+
+<section>
+  {
+    data.values.map((financialProjections) => (
+      <ProjectionsCard {financialProjections} />
+    ))
+  }
+</section>
