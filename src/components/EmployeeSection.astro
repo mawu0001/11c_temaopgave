@@ -10,17 +10,22 @@ const { data, theme } = Astro.props;
 
 <style>
   @layer components {
+    /* flyttes til corevalues */
     [data-theme="dark"] {
-      --bg-section: #333;
-      --text-section: #fff;
-      --bg-card: blue;
-      --card-text: #fff;
+      --bg-section: var(--black);
+      --text-section: var(--white);
+      --bg-card: var(--grey);
+      --card-text: var(--black);
+      /* brød tekst: #595566 */
     }
 
     section {
       padding: 2rem;
       color: var(--text-section);
       background: var(--bg-section);
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 </style>

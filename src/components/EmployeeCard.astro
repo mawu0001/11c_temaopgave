@@ -16,9 +16,10 @@ if (!images[img])
 ---
 
 <article>
+  <Image src={images[img]()} alt={name} />
   <h2>{name}</h2>
   <h3>{title}</h3>
-  <Image src={images[img]()} alt={name} />
+  <p>{description}</p>
 </article>
 
 <style>
@@ -26,10 +27,27 @@ if (!images[img])
     article {
       color: var(--card-text);
       background: var(--bg-card);
+      display: block;
+      position: relative;
+
+      h3 {
+        position: absolute;
+        padding: 1rem 2rem;
+        background: var(--black);
+        color: var(--white);
+        bottom: 20%;
+        right: 20%;
+        border-radius: 2rem;
+      }
     }
 
     img {
-      width: 200px;
+      width: 400px;
+      border-radius: 1rem;
+    }
+    h2,
+    p {
+      text-align: center;
     }
   }
 </style>

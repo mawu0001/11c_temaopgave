@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import EmployeeSection from "../components/EmployeeSection.astro";
+const url =
+  "https://raw.githubusercontent.com/mawu0001/frontend-design/main/resources/json/employees.json";
+
+const employeeData = await fetch(url).then((res) => res.json());
+---
+
+<BaseLayout title="Team">
+  <EmployeeSection data={employeeData} />
+</BaseLayout>
