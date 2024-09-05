@@ -1,24 +1,80 @@
 @layer reset, global, components, overrrides;
-
 @import url("./reset.css") layer(reset);
 @import url("./overrrides.css") layer(overrrides);
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Lato:wght@400&display=swap");
 
 @layer global {
+  .cabin {
+    font-family: "Cabin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+  }
+  .lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
   html {
     /* generelle style, overskrifter, tekst, farver, variabler */
-    font-family: system-ui, sans-serif;
+    --PrimaryFont: "Cabin", sans-serif;
+    --SecondaryFont: "Lato", sans-serif;
     --yellow: #ffcc4a;
     --green: #4eaf4e;
     --black: #181818;
     --grey: #f5f5f5;
     --white: #ffffff;
+
+    --heading1: clamp(1.625rem, 0.9747rem + 2.7746vw, 3.125rem);
+    --heading2: clamp(1.5rem, 0.931rem + 2.4277vw, 2.8125rem);
+    --heading3: clamp(1.375rem, 0.8873rem + 2.0809vw, 2.5rem);
+    --heading4: clamp(1.25rem, 0.8436rem + 1.7341vw, 2.1875rem);
+    --heading5: clamp(1.125rem, 0.7999rem + 1.3873vw, 1.875rem);
+    --heading6: clamp(1rem, 0.7561rem + 1.0405vw, 1.5625rem);
+    --body: clamp(0.875rem, 0.8208rem + 0.2312vw, 1rem);
+
+    --space-3xs: clamp(0.25rem, 0.25rem + 0vw, 0.25rem);
+    --space-2xs: clamp(0.4375rem, 0.4104rem + 0.1156vw, 0.5rem);
+    --space-xs: clamp(0.6875rem, 0.6604rem + 0.1156vw, 0.75rem);
+    --space-s: clamp(0.875rem, 0.8208rem + 0.2312vw, 1rem);
+    --space-m: clamp(1.3125rem, 1.2312rem + 0.3468vw, 1.5rem);
+    --space-l: clamp(1.75rem, 1.6416rem + 0.4624vw, 2rem);
+    --space-xl: clamp(2.625rem, 2.4624rem + 0.6936vw, 3rem);
+    --space-2xl: clamp(3.5rem, 3.2832rem + 0.9249vw, 4rem);
+    --space-3xl: clamp(5.25rem, 4.9249rem + 1.3873vw, 6rem);
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--black);
+    font-family: var(--PrimaryFont);
+  }
   h1 {
-    color: #1c1c1c;
-    font-family: Cabin;
-    font-size: 3.125rem;
-    font-weight: 600;
-    line-height: 1.3; /* 4.0625rem */
+    font-size: var(--heading1);
+  }
+  h2 {
+    font-size: var(--heading2);
+  }
+  h3 {
+    font-size: var(--heading3);
+  }
+  h4 {
+    font-size: var(--heading4);
+  }
+  h5 {
+    font-size: var(--heading5);
+  }
+  h6 {
+    font-size: var(--heading6);
+  }
+  p {
+    font-family: var(--SecondaryFont);
+    font-size: var(--body);
   }
 }
