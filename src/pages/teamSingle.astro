@@ -1,5 +1,88 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
+
+const url =
+  "https://raw.githubusercontent.com/mawu0001/frontend-design/main/resources/json/employees.json";
+
+const employeeData = await fetch(url).then((res) => res.json());
 ---
 
-<BaseLayout title="Employee" />
+<BaseLayout title="Employee">
+  <section>
+    <article class="head-content">
+      <h4>{employeeData[0].name}</h4>
+      <h6>{employeeData[0].title}</h6>
+      <p>{employeeData[0].description}</p>
+      <ul class="socials">
+        <li><a href="#"><Icon name="facebook" /></a></li>
+        <li><a href="#"></a><Icon name="instagram" /></li>
+        <li><a href="#"></a><Icon name="twitter" /></li>
+        <li><a href="#"></a><Icon name="linked-in" /></li>
+      </ul>
+    </article>
+    <figure>
+      <img src={employeeData[0].img} alt={employeeData[0].name} />
+    </figure>
+    <article class="text-content">
+      <h4>Past experience</h4>
+      <p>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit sed do. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit, sed do eiusmod tempor incididunt labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur.
+      </p>
+    </article>
+  </section>
+</BaseLayout>
+
+<style>
+  @layer component {
+    section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: [full-start] 1fr 1fr [full-end];
+
+      article {
+        grid-column: 2;
+      }
+      head-content {
+        grid-row: 1;
+      }
+      text-content {
+        grid-row: 2;
+      }
+      figure {
+        position: relative;
+        display: block;
+        grid-column: 1;
+        grid-row: full;
+        ::after {
+          position: absolute;
+          content: "";
+          padding: 1rem 2rem;
+          background: green;
+          bottom: 2rem;
+          right: 4rem;
+          border-radius: 2rem;
+        }
+        img {
+          width: 300px;
+        }
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        [data-icon] {
+          height: 24px;
+          width: 24px;
+        }
+      }
+    }
+  }
+</style>
