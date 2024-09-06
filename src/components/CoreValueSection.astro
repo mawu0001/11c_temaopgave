@@ -8,8 +8,6 @@ const { data, theme } = Astro.props;
   {data.values.map((corevalues) => <CoreValueCard {corevalues} />)}
 </section>
 
-<!--   {data.map((employee) => <EmployeeCard {employee} />)} -->
-
 <style>
   [data-theme="dark"] {
     --bg-section: var(--black);
