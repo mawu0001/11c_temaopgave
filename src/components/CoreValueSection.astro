@@ -1,12 +1,14 @@
 ---
 import CoreValueCard from "./CoreValueCard.astro";
 
-const { data, theme } = Astro.props;
+const { data, theme, icon } = Astro.props;
 ---
 
-<section data-theme={theme}>
+<ul data-theme={theme}>
+  <h2>{data.title}</h2>
+  <p>{data.subtitle}</p>
   {data.values.map((corevalues) => <CoreValueCard {corevalues} />)}
-</section>
+</ul>
 
 <style>
   [data-theme="dark"] {

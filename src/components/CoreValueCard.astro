@@ -1,9 +1,11 @@
 ---
 const { corevalues } = Astro.props;
 const { title, description, text, icon } = corevalues;
+import { Icon } from "astro-icon/components";
 ---
 
-<article>
+<li>
+  <!-- <Icon name={icon} /> -->
   <h6>{title}</h6>
   <p>{description}</p>
-</article>
+</li>
