@@ -1,4 +1,5 @@
 ---
+import Banner from "./Banner.astro";
 import CoreValueCard from "./CoreValueCard.astro";
 
 const { data, theme, icon } = Astro.props;
@@ -7,6 +8,7 @@ const { data, theme, icon } = Astro.props;
 <section class="full-bleed">
   <article>
     <header data-theme={theme}>
+      <Banner text="Growing with our Clients" theme="white" />
       <h2>{data.title}</h2>
       <p>{data.subtitle}</p>
     </header>
@@ -18,8 +20,8 @@ const { data, theme, icon } = Astro.props;
 
 <style>
   [data-theme="dark"] {
-    --bg-section: var(--black);
-    --text-section: var(--white);
+    --bg-color-2: var(--black);
+    --text-color: var(--white);
     --bg-card: var(--grey);
     --card-text: var(--black);
     /* brød tekst: #595566 */
@@ -27,7 +29,9 @@ const { data, theme, icon } = Astro.props;
   section {
     display: grid;
     grid-template-columns: var(--grid-columns);
-    background: var(--grey);
+    background: var(--bg-color-2);
+    /* background: var(--bg-color-2); */
+    padding: var(--section-padding) 0;
   }
   article {
     grid-column: full;

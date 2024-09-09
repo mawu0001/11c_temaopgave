@@ -2,27 +2,31 @@
 import { Image } from "astro:assets";
 
 import img from "../assets/images/expect-img.png";
+import Banner from "./Banner.astro";
 ---
 
 <section>
   <Image class="img" src={img} alt="" />
-  <h2>What To Expect</h2>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat.
-  </p>
-  <ul>
-    <li>
-      Bring to the table win-win survival strategies to ensure proactive
-      domination. At the end of the day.
-    </li>
-    <li>
-      Capitalize on low hanging fruit to identify a ballpark value added
-      activity to beta test override the digital.
-    </li>
-  </ul>
+  <article>
+    <Banner text="WE'LL WORK WITH YOU" theme="yellow" />
+    <h2>What To Expect</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.
+    </p>
+    <ul>
+      <li>
+        Bring to the table win-win survival strategies to ensure proactive
+        domination. At the end of the day.
+      </li>
+      <li>
+        Capitalize on low hanging fruit to identify a ballpark value added
+        activity to beta test override the digital.
+      </li>
+    </ul>
+  </article>
 </section>
 
 <style>
@@ -33,6 +37,54 @@ import img from "../assets/images/expect-img.png";
   section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    position: relative;
+
+    &::before {
+      --square-count: 15;
+      --square-size: 1.34rem;
+
+      --_square-size: var(--square-size, 1rem);
+      --_square-half: calc(var(--square-size) / 2);
+      --_square-sum: calc(var(--square-count) * var(--square-size));
+      z-index: -1;
+      content: "";
+      position: absolute;
+      top: -65px;
+      left: -65px;
+      inline-size: calc(
+        round(var(--_square-sum), var(--_square-size)) - var(--_square-half)
+      );
+      aspect-ratio: 1;
+      background: linear-gradient(
+          135deg,
+          #be965d,
+          #976f40,
+          #c99b61,
+          #f0be7b,
+          #ffcb85,
+          #eebc79,
+          #c0935b,
+          #976f40
+        )
+        0 0 / 100% 100%;
+      mask:
+        var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+        var(--square-pattern) var(--_square-half) var(--_square-half) /
+          var(--_square-size) var(--_square-size);
+      /*clip-path: polygon(-3% 0%, 100% 0%, 100% 103%);*/
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -30px;
+      left: -30px;
+      background: var(--green);
+      width: 150px;
+      height: 150px;
+      border-radius: 2rem;
+      z-index: -1;
+    }
 
     ul {
       display: grid;
@@ -53,6 +105,12 @@ import img from "../assets/images/expect-img.png";
       width: 1.6rem;
       aspect-ratio: 1;
       background: var(--checkmark-icon) 50% 50% / contain no-repeat;
+    }
+
+    img {
+      /* grid-column: 1;
+      grid-row: 1; */
+      border-radius: 2rem;
     }
   }
 </style>

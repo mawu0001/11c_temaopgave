@@ -12,8 +12,11 @@
     <input type="button" id="button" value="Subscribe" />
   </form>
 </section>
+
+
 <style>
   @layer components {
+
     section {
       background: var(--black);
       color: var(--white);
@@ -23,10 +26,63 @@
       border-radius: 2rem;
       max-width: 1200px;
       gap: 5rem;
+      position: relative;
+      margin-bottom: 4rem;
+          /* flow space el. margin var */
+
 
       p,
       h4 {
         color: var(--white);
+      }
+
+      &::before {
+        --square-count: 15;
+        --square-size: 1.34rem;
+
+        --_square-size: var(--square-size, 1rem);
+        --_square-half: calc(var(--square-size) / 2);
+        --_square-sum: calc(var(--square-count) * var(--square-size));
+        z-index: 1;
+        content: "";
+        position: absolute;
+        inset: -145px -145px auto auto;
+        rotate: 45deg;
+        /*inline-size: calc(var(--square-count) * 1.34rem - .67rem);*/
+        inline-size: calc(
+          round(var(--_square-sum), var(--_square-size)) - var(--_square-half)
+        );
+        aspect-ratio: 1;
+        background: linear-gradient(
+            135deg,
+            #be965d,
+            #976f40,
+            #c99b61,
+            #f0be7b,
+            #ffcb85,
+            #eebc79,
+            #c0935b,
+            #976f40
+          )
+          0 0 / 100% 100%;
+        mask:
+          var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+          var(--square-pattern) var(--_square-half) var(--_square-half) /
+            var(--_square-size) var(--_square-size);
+        /*clip-path: polygon(-3% 0%, 100% 0%, 100% 103%);*/
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+       background: var(--green);
+        width: 150px;
+        height: 150px;
+        border-radius: 2rem;
+        inset: 164px -45px auto auto;
+        z-index: 1;
+        rotate: 40deg;
+    }
       }
     }
 
@@ -41,6 +97,7 @@
       #button {
         border-radius: 2rem;
         padding: 1rem 3rem;
+        z-index: 2;
       }
       #email {
         background: var(--white);

@@ -25,7 +25,7 @@ const { title = "" } = Astro.props;
 </html>
 
 <style>
-  @layer components {
+  @layer global {
     body {
       display: grid;
       grid-template-columns: var(--grid-columns);
@@ -37,6 +37,7 @@ const { title = "" } = Astro.props;
         grid-column: full;
         display: grid;
         grid: auto / subgrid;
+        row-gap: var(--space-3xl);
 
         > :not(&) {
           grid-column: content;

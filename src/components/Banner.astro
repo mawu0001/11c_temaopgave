@@ -1,0 +1,35 @@
+---
+const { text, theme } = Astro.props;
+---
+
+<div data-theme={theme}>
+  <p>{text}</p>
+</div>
+
+<style>
+  [data-theme="green"] {
+    --bg-color: var(--green);
+    --text-color: var(--white);
+    /* brød tekst: #595566 */
+  }
+  [data-theme="yellow"] {
+    --bg-color: var(--yellow);
+    --text-color: var(--black);
+  }
+  [data-theme="black"] {
+    --bg-color: var(--black);
+    --text-color: var(--white);
+  }
+  [data-theme="white"] {
+    --bg-color: var(--white);
+    --text-color: var(--black);
+  }
+  div {
+    background: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 1rem;
+    width: fit-content;
+    padding: 0 15px;
+    text-transform: uppercase;
+  }
+</style>

@@ -1,0 +1,39 @@
+---
+import Banner from "./Banner.astro";
+import ExperienceFigure from "./ExperienceFigure.astro";
+---
+
+<section class="full-bleed">
+  <article>
+    <div class="content">
+      <Banner text="Experience" theme="white" />
+      <h2>More than 25 years of experience</h2>
+      <p>3000+ our clients are insured around the World</p>
+    </div>
+    <div class="figures">
+      <ExperienceFigure />
+    </div>
+  </article>
+</section>
+
+<style>
+  @layer components {
+    section {
+      padding: var(--section-padding);
+      background: var(--yellow);
+
+      article {
+        display: flex;
+
+        .content {
+        }
+        .figures {
+          display: flex;
+          place-content: space-between;
+          place-items: center;
+          gap: var(--space-m);
+        }
+      }
+    }
+  }
+</style>
