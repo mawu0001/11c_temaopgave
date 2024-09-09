@@ -46,7 +46,9 @@
     --space-2xl: clamp(3.5rem, 3.2832rem + 0.9249vw, 4rem);
     --space-3xl: clamp(5.25rem, 4.9249rem + 1.3873vw, 6rem);
 
-    --content-width: 75rem;
+    --grid-columns: [full-start] 1fr [content] minmax(0, var(--content-width))
+      1fr [full-end];
+    --content-width: 65rem;
   }
 
   h1,

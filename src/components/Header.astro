@@ -3,37 +3,41 @@ import PopOver from "./PopOver.astro";
 ---
 
 <header>
-  <div id="logo">
-    <a class="logo" href="#"> AskExperts </a>
-  </div>
-  <button popovertarget="popup">login</button>
-  <nav>
-    <ul class="menu">
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/caseStudy.html">Case Study</a></li>
-      <li><a href="/team.html">Team</a></li>
-      <li><a href="/about.html">About</a></li>
-    </ul>
-    <div class="burger">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
+  <div>
+    <div id="logo">
+      <a class="logo" href="#"> AskExperts </a>
     </div>
-  </nav>
+    <button popovertarget="popup">login</button>
+    <nav>
+      <ul class="menu">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/caseStudy.html">Case Study</a></li>
+        <li><a href="/team.html">Team</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+      <div class="burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </nav>
+  </div>
 </header>
 <!-- <PopOver /> -->
 <style>
   @layer components {
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       padding: 40px;
       position: sticky;
-      background: var(--black);
+      background: oklch(from var(--black) calc(l + 0.1) c h);
       color: var(--white);
       top: 0;
       z-index: 1000;
+    }
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     .menu {
       display: flex;

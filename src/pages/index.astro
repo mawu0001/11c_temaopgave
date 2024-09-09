@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import CoreValueSection from "../components/CoreValueSection.astro";
 import ProjectionsSection from "../components/ProjectionsSection.astro";
 import NewsLetter from "../components/NewsLetter.astro";
+import HeroHome from "../components/HeroHome.astro";
 
 const url_projections =
   "https://raw.githubusercontent.com/mawu0001/frontend-design/main/resources/json/projections.json";
@@ -14,6 +15,7 @@ const coreValues = await fetch(url_corevalues).then((res) => res.json());
 ---
 
 <BaseLayout title="Home">
+  <HeroHome />
   <CoreValueSection data={coreValues} theme="dark" />
   <ProjectionsSection data={projection} />
   <NewsLetter />

@@ -14,7 +14,8 @@ const { title = "" } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <ViewTransitions />
     <title>{title} - AskExperts</title>
-  </head><body>
+  </head>
+  <body>
     <Header />
     <main>
       <slot />
@@ -24,14 +25,23 @@ const { title = "" } = Astro.props;
 </html>
 
 <style>
-  /* main {
-    display: grid;
-    grid-template-columns:
-      [full-start] 1fr [content] minmax(0, var(--content-width))
-      1fr [full-end];
+  @layer components {
+    body {
+      display: grid;
+      grid-template-columns: var(--grid-columns);
+      grid-template-rows: auto 1fr auto;
+      align-items: start;
 
-    main > * {
-      grid-column: content;
+      > *,
+      * > .full-bleed {
+        grid-column: full;
+        display: grid;
+        grid: auto / subgrid;
+
+        > :not(&) {
+          grid-column: content;
+        }
+      }
     }
-  } */
+  }
 </style>

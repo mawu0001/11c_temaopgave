@@ -13,6 +13,6 @@ const coreValues = await fetch(url_corevalues).then((res) => res.json());
 ---
 
 <BaseLayout title="About">
-  <EmployeeSection data={firstThreeEmployees} />
   <CoreValueSection data={coreValues} />
+  <EmployeeSection data={firstThreeEmployees} />
 </BaseLayout>

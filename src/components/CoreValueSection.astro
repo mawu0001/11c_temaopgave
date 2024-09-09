@@ -4,11 +4,17 @@ import CoreValueCard from "./CoreValueCard.astro";
 const { data, theme, icon } = Astro.props;
 ---
 
-<ul data-theme={theme}>
-  <h2>{data.title}</h2>
-  <p>{data.subtitle}</p>
-  {data.values.map((corevalues) => <CoreValueCard {corevalues} />)}
-</ul>
+<section class="full-bleed">
+  <article>
+    <header data-theme={theme}>
+      <h2>{data.title}</h2>
+      <p>{data.subtitle}</p>
+    </header>
+    <ul>
+      {data.values.map((corevalues) => <CoreValueCard {corevalues} />)}
+    </ul>
+  </article>
+</section>
 
 <style>
   [data-theme="dark"] {
@@ -17,5 +23,27 @@ const { data, theme, icon } = Astro.props;
     --bg-card: var(--grey);
     --card-text: var(--black);
     /* brød tekst: #595566 */
+  }
+  section {
+    display: grid;
+    grid-template-columns: var(--grid-columns);
+    background: var(--grey);
+  }
+  article {
+    grid-column: full;
+    display: grid;
+    grid-template-columns: var(--grid-columns);
+
+    header {
+      grid-column: content;
+    }
+
+    > ul {
+      grid-column: full;
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      padding-inline: max(1rem, 50% - var(--content-width) / 2);
+      gap: 2rem;
+    }
   }
 </style>
