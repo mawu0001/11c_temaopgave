@@ -1,9 +1,12 @@
+---
+import PopOver from "./PopOver.astro";
+---
+
 <header>
-  <div class="logo">
-    <a href="/">
-      <p class="logo">AskExperts</p>
-    </a>
+  <div id="logo">
+    <a class="logo" href="#"> AskExperts </a>
   </div>
+  <button popovertarget="popup">login</button>
   <nav>
     <ul class="menu">
       <li><a href="/index.html">Home</a></li>
@@ -18,40 +21,54 @@
     </div>
   </nav>
 </header>
-
+<!-- <PopOver /> -->
 <style>
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px;
-    position: sticky;
-    background-color: var(--flamepea50);
-    top: 0;
-    z-index: 1000;
-  }
-  .menu {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .menu li {
-    margin-right: 20px;
-  }
-  .menu li:last-child {
-    margin-right: 0;
-  }
-  .menu a {
-    display: block;
-    padding: 10px;
-    color: var(--pesto950);
-    text-decoration: none;
-    transition: color 0.3s;
-    text-align: end;
-    font-size: 1rem;
-    transition:
-      color 0.3s,
-      font-weight 0.3s;
+  @layer components {
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px;
+      position: sticky;
+      background: var(--black);
+      color: var(--white);
+      top: 0;
+      z-index: 1000;
+    }
+    .menu {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .menu li {
+      margin-right: 20px;
+    }
+    .menu li:last-child {
+      margin-right: 0;
+    }
+    .menu a {
+      display: block;
+      padding: 10px;
+      transition: color 0.3s;
+      text-align: end;
+      transition:
+        color 0.3s,
+        font-weight 0.3s;
+    }
+
+    .logo {
+      color: var(--white);
+      font-weight: 600;
+    }
+    button {
+      background: var(--yellow);
+      border-radius: 2rem;
+      padding: 0.5rem 1.5rem;
+      order: 3;
+    }
+    button:hover {
+      background-color: oklch(from var(--yellow) calc(l - 0.1) c h);
+    }
   }
 </style>

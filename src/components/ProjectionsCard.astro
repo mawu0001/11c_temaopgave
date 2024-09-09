@@ -1,9 +1,30 @@
 ---
 const { financialProjections } = Astro.props;
 const { title, description, link, icon } = financialProjections;
+import { Icon } from "astro-icon/components";
 ---
 
-<article>
+<li>
+  <Icon name={icon} />
   <h6>{title}</h6>
   <p>{description}</p>
-</article>
+</li>
+
+<style>
+  li {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    flex-basis: min(400px, 90%);
+    flex-shrink: 0;
+    background: var(--grey);
+    color: var(--black);
+    border-radius: 2rem;
+    padding: 2.75rem 2.1875rem;
+
+    [data-icon] {
+      height: 24px;
+
+      width: 24px;
+    }
+  }
+</style>

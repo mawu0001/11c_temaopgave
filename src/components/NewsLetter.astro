@@ -1,0 +1,65 @@
+---
+
+---
+
+<section>
+  <article>
+    <h4>Subscribe Our Newsletter</h4>
+    <p>Build stronger Customer Relationships with Consultalk</p>
+  </article>
+  <form action="#">
+    <input type="text" id="email" placeholder="Your Email Adress" />
+    <input type="button" id="button" value="Subscribe" />
+  </form>
+</section>
+<style>
+  @layer components {
+    section {
+      background: var(--black);
+      color: var(--white);
+      display: flex;
+      padding: 3rem 5rem;
+      place-content: center;
+      border-radius: 2rem;
+      max-width: 1200px;
+      gap: 5rem;
+
+      p,
+      h4 {
+        color: var(--white);
+      }
+    }
+
+    form {
+      border-radius: 2rem;
+      display: flex;
+      flex-direction: row;
+      place-items: center;
+      gap: 1rem;
+
+      #email,
+      #button {
+        border-radius: 2rem;
+        padding: 1rem 3rem;
+      }
+      #email {
+        background: var(--white);
+        color: var(--black);
+      }
+      #button {
+        background: var(--yellow);
+        color: var(--black);
+      }
+
+      #button:hover {
+        background-color: oklch(from var(--yellow) calc(l - 0.1) c h);
+      }
+
+      #button:active {
+        background-color: oklch(from var(--yellow) calc(l - 0.8) c h);
+        color: var(--white);
+        border: 1px solid var(--white);
+      }
+    }
+  }
+</style>

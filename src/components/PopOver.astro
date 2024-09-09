@@ -1,0 +1,59 @@
+---
+
+---
+
+<form action="#" popover id="popup">
+  <h2>Dashboard Login</h2>
+  <input type="text" name="email" id="email" placeholder="Enter Email" />
+  <input
+    type="text"
+    name="password"
+    id="password"
+    placeholder="Enter Password"
+  />
+  <button>Go to Dashboard</button>
+</form>
+<style>
+  /* ::backdrop {
+    background: var(--black);
+    backdrop-filter: blur(4px);
+  } */
+
+  form {
+    z-index: 2;
+    background: var(--black);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 10rem;
+    gap: 1rem;
+    border-radius: 2rem;
+    place-items: center;
+    h2 {
+      color: var(--white);
+    }
+
+    input {
+      padding: 1rem 3rem;
+      background: var(--white);
+      color: var(--black);
+      border-radius: 2rem;
+    }
+  }
+  button {
+    background: var(--yellow);
+    border-radius: 2rem;
+    width: fit-content;
+    padding: 1rem 2rem;
+  }
+
+  button:hover {
+    background-color: oklch(from var(--yellow) calc(l - 0.1) c h);
+  }
+
+  button:active {
+    background-color: oklch(from var(--yellow) calc(l - 0.8) c h);
+    color: var(--white);
+    border: 1px solid var(--white);
+  }
+</style>
