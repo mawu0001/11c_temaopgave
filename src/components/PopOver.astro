@@ -2,42 +2,53 @@
 
 ---
 
-<form action="#" popover id="popup">
+<article popover id="popup">
   <h2>Dashboard Login</h2>
-  <input type="text" name="email" id="email" placeholder="Enter Email" />
-  <input
-    type="text"
-    name="password"
-    id="password"
-    placeholder="Enter Password"
-  />
-  <button>Go to Dashboard</button>
-</form>
+  <form action="#">
+    <input type="text" name="email" id="email" placeholder="Enter Email" />
+    <input
+      type="text"
+      name="password"
+      id="password"
+      placeholder="Enter Password"
+    />
+    <button>Go to Dashboard</button>
+  </form>
+</article>
 <style>
-  /* ::backdrop {
-    background: var(--black);
-    backdrop-filter: blur(4px);
-  } */
-
-  form {
+  #popup {
     z-index: 2;
     background: var(--black);
     color: var(--white);
-    display: flex;
-    flex-direction: column;
+    display: none;
     padding: 3rem 10rem;
     gap: 1rem;
     border-radius: 2rem;
     place-items: center;
+
+    &:popover-open {
+      display: flex;
+      flex-direction: column;
+    }
+
     h2 {
       color: var(--white);
     }
+    &::backdrop {
+      background: #1818187e;
+      backdrop-filter: blur(10px);
+    }
 
-    input {
-      padding: 1rem 3rem;
-      background: var(--white);
-      color: var(--black);
-      border-radius: 2rem;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      input {
+        padding: 1rem 3rem;
+        background: var(--white);
+        color: var(--black);
+        border-radius: 2rem;
+      }
     }
   }
   button {
