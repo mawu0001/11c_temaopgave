@@ -32,6 +32,13 @@ const { data, theme, icon } = Astro.props;
     background: var(--bg-section, var(--grey));
     /* background: var(--bg-color-2); */
     padding: var(--section-padding) 0;
+
+    header {
+      h2,
+      p {
+        color: var(--card-text, var(--text-color));
+      }
+    }
   }
   article {
     grid-column: full;
