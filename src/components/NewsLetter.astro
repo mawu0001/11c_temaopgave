@@ -13,10 +13,8 @@
   </form>
 </section>
 
-
 <style>
   @layer components {
-
     section {
       background: var(--black);
       color: var(--white);
@@ -28,31 +26,28 @@
       gap: 5rem;
       position: relative;
       margin-bottom: 4rem;
-          /* flow space el. margin var */
+      /* flow space el. margin var */
 
-
-      p,
-      h4 {
-        color: var(--white);
-      }
+      overflow: clip;
+      isolation: isolate;
 
       &::before {
-        --square-count: 15;
-        --square-size: 1.34rem;
+        --square-count: 12;
+        --square-size: 1rem;
 
         --_square-size: var(--square-size, 1rem);
         --_square-half: calc(var(--square-size) / 2);
         --_square-sum: calc(var(--square-count) * var(--square-size));
-        z-index: 1;
+        z-index: -1;
         content: "";
         position: absolute;
-        inset: -145px -145px auto auto;
-        rotate: 45deg;
-        /*inline-size: calc(var(--square-count) * 1.34rem - .67rem);*/
+        right: 0;
+        top: 0;
+        transform-origin: 0 0;
         inline-size: calc(
           round(var(--_square-sum), var(--_square-size)) - var(--_square-half)
         );
-        aspect-ratio: 1;
+        aspect-ratio: 0.7;
         background: linear-gradient(
             135deg,
             #be965d,
@@ -70,52 +65,59 @@
           var(--square-pattern) var(--_square-half) var(--_square-half) /
             var(--_square-size) var(--_square-size);
         /*clip-path: polygon(-3% 0%, 100% 0%, 100% 103%);*/
+        rotate: -45deg;
+        opacity: 50%;
       }
 
       &::after {
         content: "";
+        height: 100%;
+        width: 50%;
+        border-radius: inherit;
+        background: #4eaf4e;
         position: absolute;
-       background: var(--green);
-        width: 150px;
-        height: 150px;
-        border-radius: 2rem;
-        inset: 164px -45px auto auto;
-        z-index: 1;
-        rotate: 40deg;
-    }
-      }
-    }
-
-    form {
-      border-radius: 2rem;
-      display: flex;
-      flex-direction: row;
-      place-items: center;
-      gap: 1rem;
-
-      #email,
-      #button {
-        border-radius: 2rem;
-        padding: 1rem 3rem;
-        z-index: 2;
-      }
-      #email {
-        background: var(--white);
-        color: var(--black);
-      }
-      #button {
-        background: var(--yellow);
-        color: var(--black);
+        top: 50%;
+        bottom: 0;
+        right: 2rem;
+        rotate: -45deg;
+        transform-origin: right top;
       }
 
-      #button:hover {
-        background-color: oklch(from var(--yellow) calc(l - 0.1) c h);
-      }
-
-      #button:active {
-        background-color: oklch(from var(--yellow) calc(l - 0.8) c h);
+      p,
+      h4 {
         color: var(--white);
-        border: 1px solid var(--white);
+      }
+      form {
+        border-radius: 2rem;
+        display: flex;
+        flex-direction: row;
+        place-items: center;
+        gap: 1rem;
+
+        #email,
+        #button {
+          border-radius: 2rem;
+          padding: 1rem 3rem;
+          z-index: 2;
+        }
+        #email {
+          background: var(--white);
+          color: var(--black);
+        }
+        #button {
+          background: var(--yellow);
+          color: var(--black);
+        }
+
+        #button:hover {
+          background-color: oklch(from var(--yellow) calc(l - 0.1) c h);
+        }
+
+        #button:active {
+          background-color: oklch(from var(--yellow) calc(l - 0.8) c h);
+          color: var(--white);
+          border: 1px solid var(--white);
+        }
       }
     }
   }
