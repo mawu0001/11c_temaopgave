@@ -17,7 +17,7 @@ if (!images[img])
 ---
 
 <article>
-  <a href="#">
+  <a href="teamSingle.html">
     <div class="container">
       <!-- skal ind i image tag efter alt >> transition:name={slug}, skal ind på 
      tilsvarende tags på slug siden -->
@@ -40,6 +40,16 @@ if (!images[img])
       color: var(--card-text);
       background: var(--bg-card);
 
+      ul {
+        display: flex;
+        place-content: center;
+        gap: 1rem;
+      }
+      [data-icon] {
+        height: 25px;
+        width: 25px;
+        color: var(--black);
+      }
       .container {
         display: grid;
         /* position: relative; */
@@ -48,7 +58,8 @@ if (!images[img])
         }
 
         > .subtitle {
-          place-self: start end;
+          margin: 1rem;
+          place-self: end end;
           display: grid;
           place-content: center;
           background: var(--black);
@@ -57,10 +68,14 @@ if (!images[img])
           border-radius: 2rem;
           z-index: 2;
         }
-        ul {
-          a {
-            color: red;
-          }
+
+        .subtitle:hover {
+          background: var(--yellow);
+          color: var(--black);
+        }
+
+        .subtitle:active {
+          background: oklch(from var(--yellow) calc(l - 0.1) c h);
         }
       }
       img {

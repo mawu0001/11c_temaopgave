@@ -115,8 +115,7 @@
 
   a {
     text-decoration: none;
-    /* color: var(--white); */
-    color: inherit;
+    color: var(--white);
     font-size: var(--body);
   }
 
