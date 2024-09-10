@@ -2,6 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import EmployeeSection from "../components/EmployeeSection.astro";
 import CoreValueSection from "../components/CoreValueSection.astro";
+import HeroMain from "../components/HeroMain.astro";
+import VisionSection from "../components/VisionSection.astro";
 const url_employee =
   "https://raw.githubusercontent.com/mawu0001/frontend-design/main/resources/json/employees.json";
 const employeeData = await fetch(url_employee).then((res) => res.json());
@@ -13,6 +15,8 @@ const coreValues = await fetch(url_corevalues).then((res) => res.json());
 ---
 
 <BaseLayout title="About">
+  <HeroMain text="Creative Services For Boost Your Business Growth" />
+  <VisionSection />
   <CoreValueSection data={coreValues} />
   <EmployeeSection data={firstThreeEmployees} />
 </BaseLayout>

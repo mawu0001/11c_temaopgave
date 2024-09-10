@@ -1,6 +1,7 @@
 ---
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 
 const { employee } = Astro.props;
 const { img, name, title, description, slug, social_links } = employee;
@@ -16,14 +17,21 @@ if (!images[img])
 ---
 
 <article>
-  <figure>
-    <!-- skal ind i image tag efter alt >> transition:name={slug}, skal ind på 
+  <a href="#">
+    <div class="container">
+      <!-- skal ind i image tag efter alt >> transition:name={slug}, skal ind på 
      tilsvarende tags på slug siden -->
-    <Image src={images[img]()} alt={name} />
-    <p>{title}</p>
-  </figure>
-  <h5><a href="">{name}</a></h5>
-  <p>{description}</p>
+      <Image class="img" src={images[img]()} alt={name} />
+      <p class="subtitle">{title}</p>
+    </div>
+    <h5>{name}</h5>
+    <p>{description}</p>
+  </a>
+  <ul role="list">
+    <li><a href="#"><Icon name="facebook" /></a></li>
+    <li><a href="#"><Icon name="instagram" /></a></li>
+    <li><a href="#"><Icon name="linked-in" /></a></li>
+  </ul>
 </article>
 
 <style>
@@ -32,28 +40,36 @@ if (!images[img])
       color: var(--card-text);
       background: var(--bg-card);
 
-      figure {
-        display: block;
-        position: relative;
-      }
-      /* ::after {
-        position: absolute;
-        padding: 1rem 2rem;
-        background: var(--black);
-        color: var(--white);
-        bottom: 20%;
-        right: 20%;
-        border-radius: 2rem;
-      } */
-    }
+      .container {
+        display: grid;
+        /* position: relative; */
+        > :is(.img, .subtitle) {
+          grid-area: 1 / 1;
+        }
 
-    img {
-      width: 400px;
-      border-radius: 1rem;
-    }
-    h2,
-    p {
-      text-align: center;
+        > .subtitle {
+          place-self: start end;
+          display: grid;
+          place-content: center;
+          background: var(--black);
+          color: var(--white);
+          padding: 1rem 2rem;
+          border-radius: 2rem;
+          z-index: 2;
+        }
+        ul {
+          a {
+            color: red;
+          }
+        }
+      }
+      img {
+        border-radius: 1rem;
+      }
+      h5,
+      p {
+        text-align: center;
+      }
     }
   }
 </style>

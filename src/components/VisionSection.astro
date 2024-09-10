@@ -1,0 +1,151 @@
+---
+import Banner from "./Banner.astro";
+
+import { Image } from "astro:assets";
+import img from "../assets/images/vision-img.jpg";
+---
+
+<section>
+  <article>
+    <Image class="img" src={img} alt="xxxxx" />
+    <div>
+      <Banner text=" Our Vision" theme="green" />
+      <h2>Turn your ideas into reality.</h2>
+      <p>
+        Capitalize on low hanging fruit to identify a ballpark value added
+        activity beta test. Override the digital divide with additional from
+        DevOps.
+      </p>
+      <ul>
+        <li>
+          Bring to the table win-win survival strategies to ensure proactive
+          domination. At the end of the day.
+        </li>
+        <li>
+          Capitalize on low hanging fruit to identify a ballpark value added
+          activity to beta test override the digital.
+        </li>
+      </ul>
+    </div>
+  </article>
+  <dl>
+    <div>
+      <dt>Successful Work</dt>
+      <dd>1128+</dd>
+    </div>
+    <div>
+      <dt>Team Members</dt>
+      <dd>908+</dd>
+    </div>
+    <div>
+      <dt>Happy customers</dt>
+      <dd>258+</dd>
+    </div>
+    <div>
+      <dt>Creative Idea</dt>
+      <dd>564+</dd>
+    </div>
+  </dl>
+</section>
+
+<style>
+  @layer component {
+    article {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      position: relative;
+
+      img {
+        order: 2;
+        border-radius: 2rem;
+      }
+
+      ul {
+        display: grid;
+        gap: 1rem;
+      }
+
+      li {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      li:before {
+        content: "";
+        width: 1.6rem;
+        aspect-ratio: 1;
+        background: var(--checkmark-icon) 50% 50% / contain no-repeat;
+      }
+
+      &::before {
+        --square-count: 15;
+        --square-size: 1.34rem;
+
+        --_square-size: var(--square-size, 1rem);
+        --_square-half: calc(var(--square-size) / 2);
+        --_square-sum: calc(var(--square-count) * var(--square-size));
+        z-index: -1;
+        content: "";
+        position: absolute;
+        top: -65px;
+        right: -65px;
+        inline-size: calc(
+          round(var(--_square-sum), var(--_square-size)) - var(--_square-half)
+        );
+        aspect-ratio: 1;
+        background: linear-gradient(
+            135deg,
+            #be965d,
+            #976f40,
+            #c99b61,
+            #f0be7b,
+            #ffcb85,
+            #eebc79,
+            #c0935b,
+            #976f40
+          )
+          0 0 / 100% 100%;
+        mask:
+          var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+          var(--square-pattern) var(--_square-half) var(--_square-half) /
+            var(--_square-size) var(--_square-size);
+        /*clip-path: polygon(-3% 0%, 100% 0%, 100% 103%);*/
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        background: var(--green);
+        width: 150px;
+        height: 150px;
+        border-radius: 2rem;
+        z-index: -1;
+      }
+    }
+
+    dl {
+      margin: 3rem;
+      text-align: center;
+      place-content: center;
+
+      display: flex;
+      gap: 3rem;
+
+      > * {
+        display: flex;
+        flex-direction: column-reverse;
+        font-size: 1.125rem;
+        color: #181818;
+
+        :last-child {
+          font-size: 3.125rem;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+</style>
