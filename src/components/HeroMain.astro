@@ -4,13 +4,13 @@ import { Image } from "astro:assets";
 import img from "../assets/images/hero1.png";
 import Banner from "./Banner.astro";
 
-const { text } = Astro.props;
+const { Bannertext, text } = Astro.props;
 ---
 
 <section class="full-bleed">
   <Image class="img full-bleed" src={img} alt="xxxxx" />
   <article>
-    <Banner text="Services" theme="yellow" />
+    <Banner text={Bannertext} theme="yellow" />
     <h1>{text}</h1>
   </article>
 </section>
@@ -19,7 +19,6 @@ const { text } = Astro.props;
   @layer components {
     section {
       position: relative;
-      background-image: src;
 
       article {
         background-color: #ffffffb6;

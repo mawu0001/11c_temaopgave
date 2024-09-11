@@ -1,12 +1,13 @@
 ---
 import ProjectionsCard from "./ProjectionsCard.astro";
-
+import { Icon } from "astro-icon/components";
 const { data } = Astro.props;
 ---
 
 <section>
   <article>
     <header>
+      <Icon name="finpro" />
       <h2>{data.title}</h2>
       <p>
         {data.subtitle}

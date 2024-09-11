@@ -17,10 +17,14 @@ const coreValues = await fetch(url_corevalues).then((res) => res.json());
 ---
 
 <BaseLayout title="About">
-  <HeroMain text="Creative Services For Boost Your Business Growth" />
+  <HeroMain
+    Bannertext="services"
+    text="Creative Services For Boost Your Business Growth"
+  />
   <VisionSection />
   <CoreValueSection data={coreValues} />
   <EmployeeSection
+    Bannertext="Our team"
     data={firstThreeEmployees}
     title="We champion the bold to achieve the extraordinary"
     subtitel="Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team."

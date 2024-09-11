@@ -1,5 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroMain from "../components/HeroMain.astro";
+import NewsLetter from "../components/NewsLetter.astro";
+import CaseStudySection from "../components/CaseStudySection.astro";
 ---
 
-<BaseLayout title="Case Study" />
+<BaseLayout title="Case Study">
+  <HeroMain Bannertext="Case Studies single" text="Taxes & Efficiency" />
+  <CaseStudySection />
+  <NewsLetter />
+</BaseLayout>

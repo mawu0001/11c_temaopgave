@@ -2,13 +2,13 @@
 import Banner from "./Banner.astro";
 import EmployeeCard from "./EmployeeCard.astro";
 
-const { data, theme, title, subtitel } = Astro.props;
+const { data, theme, title, subtitel, Bannertext } = Astro.props;
 ---
 
 <section>
   <div class="headsection">
     <div class="header">
-      <Banner text="our team" theme="yellow" />
+      <Banner text={Bannertext} theme="yellow" />
       <h2>{title}</h2>
       <p>
         {subtitel}
