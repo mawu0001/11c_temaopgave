@@ -1,0 +1,36 @@
+---
+import AccordionElement from "./AccordionElement.astro";
+import Banner from "./Banner.astro";
+---
+
+<section>
+  <article>
+    <Banner text="faq" theme="green" />
+    <h2>Customer Questions</h2>
+  </article>
+  <AccordionElement title="What will happen when I’ve sent my application?" />
+  <AccordionElement title="Can I get a free trial before I purchase?" />
+  <AccordionElement title="What should I include in my personal statement?" />
+  <AccordionElement title="Will membership plans be charged automatically?" />
+  <AccordionElement title="What will happen when I’ve sent my application?" />
+  <AccordionElement title="Can I get a free trial before I purchase?" />
+</section>
+
+<style>
+  @layer component {
+    section {
+      background: var(--grey);
+      border-radius: 2rem;
+      display: flex;
+      flex-direction: column;
+      place-items: center;
+      padding: 5rem 0;
+
+      article {
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+      }
+    }
+  }
+</style>

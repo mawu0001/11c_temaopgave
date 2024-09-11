@@ -1,0 +1,26 @@
+---
+const { title } = Astro.props;
+---
+
+<details>
+  <summary>{title}</summary>
+  <article>
+    <slot />
+  </article>
+</details>
+
+<style>
+  @layer component {
+    details {
+      border-bottom: 1px solid oklch(from var(--grey) calc(l - 0.1) c h);
+      width: 700px;
+
+      summary {
+        padding: var(--space-s) var(--space-3xl);
+        display: flex;
+        align-items: start;
+        cursor: pointer;
+      }
+    }
+  }
+</style>

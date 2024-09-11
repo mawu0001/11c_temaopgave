@@ -4,6 +4,8 @@ import EmployeeSection from "../components/EmployeeSection.astro";
 import CoreValueSection from "../components/CoreValueSection.astro";
 import HeroMain from "../components/HeroMain.astro";
 import VisionSection from "../components/VisionSection.astro";
+import AccordionSection from "../components/AccordionSection.astro";
+import NewsLetter from "../components/NewsLetter.astro";
 const url_employee =
   "https://raw.githubusercontent.com/mawu0001/frontend-design/main/resources/json/employees.json";
 const employeeData = await fetch(url_employee).then((res) => res.json());
@@ -18,5 +20,11 @@ const coreValues = await fetch(url_corevalues).then((res) => res.json());
   <HeroMain text="Creative Services For Boost Your Business Growth" />
   <VisionSection />
   <CoreValueSection data={coreValues} />
-  <EmployeeSection data={firstThreeEmployees} />
+  <EmployeeSection
+    data={firstThreeEmployees}
+    title="We champion the bold to achieve the extraordinary"
+    subtitel="Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team."
+  />
+  <AccordionSection />
+  <NewsLetter />
 </BaseLayout>

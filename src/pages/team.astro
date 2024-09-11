@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import EmployeeSection from "../components/EmployeeSection.astro";
+import HeroMain from "../components/HeroMain.astro";
+import NewsLetter from "../components/NewsLetter.astro";
 const url =
   "https://raw.githubusercontent.com/mawu0001/frontend-design/main/resources/json/employees.json";
 
@@ -8,5 +10,14 @@ const employeeData = await fetch(url).then((res) => res.json());
 ---
 
 <BaseLayout title="Team">
-  <EmployeeSection data={employeeData} />
+  <!-- OBS forkert banner titel  på hero-component-->
+  <HeroMain text="The Consultors" />
+  <EmployeeSection
+    data={employeeData}
+    title="Meet Our Great Team"
+    subtitel="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation."
+  />
+  <!-- OBS forkert banner titel på team-component -->
+
+  <NewsLetter />
 </BaseLayout>
