@@ -17,97 +17,99 @@ import sarah from "../assets/images/sarah2.png";
 </section>
 
 <style>
-  #hero-grid {
-    background: var(--black);
-    grid-template-columns:
-      1fr calc(var(--content-width) / 2) calc(var(--content-width) / 2)
-      1fr;
-    position: relative;
+  @layer components {
+    #hero-grid {
+      background: var(--black);
+      grid-template-columns:
+        1fr calc(var(--content-width) / 2) calc(var(--content-width) / 2)
+        1fr;
+      position: relative;
 
-    &::before {
-      --square-count: 15;
-      --square-size: 1.34rem;
+      &::before {
+        --square-count: 15;
+        --square-size: 1.34rem;
 
-      --_square-size: var(--square-size, 1rem);
-      --_square-half: calc(var(--square-size) / 2);
-      --_square-sum: calc(var(--square-count) * var(--square-size));
-      z-index: 2;
-      content: "";
-      position: absolute;
-      top: 18%;
-      left: -8%;
-      inline-size: calc(
-        round(var(--_square-sum), var(--_square-size)) - var(--_square-half)
-      );
-      aspect-ratio: 1;
-      background: linear-gradient(
-          135deg,
-          #be965d,
-          #976f40,
-          #c99b61,
-          #f0be7b,
-          #ffcb85,
-          #eebc79,
-          #c0935b,
-          #976f40
-        )
-        0 0 / 100% 100%;
-      mask:
-        var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
-        var(--square-pattern) var(--_square-half) var(--_square-half) /
-          var(--_square-size) var(--_square-size);
-      /*clip-path: polygon(-3% 0%, 100% 0%, 100% 103%);*/
-    }
-
-    &::after {
-      --square-count: 8;
-      --square-size: 1.34rem;
-
-      --_square-size: var(--square-size, 1rem);
-      --_square-half: calc(var(--square-size) / 2);
-      --_square-sum: calc(var(--square-count) * var(--square-size));
-      z-index: 2;
-      content: "";
-      position: absolute;
-      left: 40%;
-      top: 5%;
-      inline-size: calc(
-        round(var(--_square-sum), var(--_square-size)) - var(--_square-half)
-      );
-      aspect-ratio: 1;
-      background: linear-gradient(
-          135deg,
-          #be965d,
-          #976f40,
-          #c99b61,
-          #f0be7b,
-          #ffcb85,
-          #eebc79,
-          #c0935b,
-          #976f40
-        )
-        0 0 / 100% 100%;
-      mask:
-        var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
-        var(--square-pattern) var(--_square-half) var(--_square-half) /
-          var(--_square-size) var(--_square-size);
-    }
-
-    article {
-      color: var(--white);
-      grid-column: 2;
-      padding: var(--section-padding) 0;
-
-      h1 {
-        color: var(--white);
+        --_square-size: var(--square-size, 1rem);
+        --_square-half: calc(var(--square-size) / 2);
+        --_square-sum: calc(var(--square-count) * var(--square-size));
+        z-index: 2;
+        content: "";
+        position: absolute;
+        top: 18%;
+        left: -8%;
+        inline-size: calc(
+          round(var(--_square-sum), var(--_square-size)) - var(--_square-half)
+        );
+        aspect-ratio: 1;
+        background: linear-gradient(
+            135deg,
+            #be965d,
+            #976f40,
+            #c99b61,
+            #f0be7b,
+            #ffcb85,
+            #eebc79,
+            #c0935b,
+            #976f40
+          )
+          0 0 / 100% 100%;
+        mask:
+          var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+          var(--square-pattern) var(--_square-half) var(--_square-half) /
+            var(--_square-size) var(--_square-size);
+        /*clip-path: polygon(-3% 0%, 100% 0%, 100% 103%);*/
       }
-    }
 
-    .img {
-      grid-column: 3 / span 2;
-      width: min(50svw, 60rem);
-      height: min(100%, 38rem);
-      z-index: 3;
+      &::after {
+        --square-count: 8;
+        --square-size: 1.34rem;
+
+        --_square-size: var(--square-size, 1rem);
+        --_square-half: calc(var(--square-size) / 2);
+        --_square-sum: calc(var(--square-count) * var(--square-size));
+        z-index: 2;
+        content: "";
+        position: absolute;
+        left: 40%;
+        top: 5%;
+        inline-size: calc(
+          round(var(--_square-sum), var(--_square-size)) - var(--_square-half)
+        );
+        aspect-ratio: 1;
+        background: linear-gradient(
+            135deg,
+            #be965d,
+            #976f40,
+            #c99b61,
+            #f0be7b,
+            #ffcb85,
+            #eebc79,
+            #c0935b,
+            #976f40
+          )
+          0 0 / 100% 100%;
+        mask:
+          var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+          var(--square-pattern) var(--_square-half) var(--_square-half) /
+            var(--_square-size) var(--_square-size);
+      }
+
+      article {
+        color: var(--white);
+        grid-column: 2;
+        padding: var(--section-padding) 0;
+
+        h1 {
+          color: var(--white);
+        }
+      }
+
+      .img {
+        grid-column: 3 / -1;
+        width: min(50svw, 60rem);
+        height: min(100%, 38rem);
+        z-index: 3;
+      }
     }
   }
 </style>

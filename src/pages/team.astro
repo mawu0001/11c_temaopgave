@@ -10,11 +10,11 @@ const employeeData = await fetch(url).then((res) => res.json());
 
 import { Image } from "astro:assets";
 
-import img from "../assets/images/hero1.png";
+import img from "../assets/images/team-img.jpg";
 ---
 
 <BaseLayout title="Team">
-  <HeroMain text="The Consultors" Bannertext="Team" />
+  <HeroMain text="The Consultors" Bannertext="Team" img={img} />
   <EmployeeSection
     data={employeeData}
     title="Meet Our Great Team"

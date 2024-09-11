@@ -1,4 +1,6 @@
 ---
+import img from "../assets/images/hero1.png";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 import EmployeeSection from "../components/EmployeeSection.astro";
 import CoreValueSection from "../components/CoreValueSection.astro";
@@ -20,6 +22,7 @@ const coreValues = await fetch(url_corevalues).then((res) => res.json());
   <HeroMain
     Bannertext="services"
     text="Creative Services For Boost Your Business Growth"
+    img={img}
   />
   <VisionSection />
   <CoreValueSection data={coreValues} />
