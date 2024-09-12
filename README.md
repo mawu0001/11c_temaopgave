@@ -42,3 +42,4 @@ grid-row: 5;
 
 Jeg synes allerede at valgfaget kan være en lille smule udfordrende - På den gode måde.
 Indtil nu har jeg følt, at jeg ikke har været specielt udfordret, så det er mega fedt, at få testet mine evner, selvom der har været virkelig meget, på kort tid.
+Overordnet set, føler jeg min struktur er blevet noget rod, på nogen af siderne, da jeg har følt mig nødsaget til at indsætte `<div/>`eller `<section/>`for at få løst nogle problemer jeg havde med bl.a. subgrid. 
