@@ -21,7 +21,7 @@ Lidt ligesom `@Layers` synes jeg det er lidt svært at bruge subgrid, da man ska
 Jeg har sat et grid op på CaseStudy siden, og et dertilhørende subgrid, for at kunne placere den
 
 `````CSS
-![s1](./public/s1.png)
+![s1](../public/s1.png)
 
 
 **Selectorer**
