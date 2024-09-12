@@ -5,7 +5,7 @@ import img from "../assets/images/expect-img.png";
 import Banner from "./Banner.astro";
 ---
 
-<section class="section-margin-top">
+<section class="section-margin-top expect-section">
   <Image class="img" src={img} alt="" />
   <article>
     <Banner text="WE'LL WORK WITH YOU" theme="yellow" />
@@ -33,6 +33,7 @@ import Banner from "./Banner.astro";
   section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
     position: relative;
 
     &::before {

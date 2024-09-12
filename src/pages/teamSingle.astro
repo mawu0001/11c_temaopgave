@@ -24,7 +24,7 @@ const employeeData = await fetch(url).then((res) => res.json());
       </div>
       <p>{employeeData[0].description}</p>
 
-      <h4>Past experience</h4>
+      <h4 class="title2">Past experience</h4>
       <p>
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
         dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
@@ -70,6 +70,8 @@ const employeeData = await fetch(url).then((res) => res.json());
         display: flex;
         grid-column: 2;
         justify-content: space-evenly;
+        margin: 0;
+        place-items: center;
         [data-icon] {
           height: 24px;
           width: 24px;
@@ -135,8 +137,7 @@ const employeeData = await fetch(url).then((res) => res.json());
         border-radius: 2rem;
       }
     }
-    h4,
-    h6,
+    .title2,
     p {
       margin-block-start: var(--flow-space);
     }
