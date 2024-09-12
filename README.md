@@ -20,9 +20,7 @@ Jeg synes `@Layers` er mega smart, det kræver dog lidt tilvænning at bruge. N�
 Lidt ligesom `@Layers` synes jeg det er lidt svært at bruge subgrid, da man skal have defineret et fyldestgørende grid fra starten af.
 Jeg har sat et grid op på CaseStudy siden, og et dertilhørende subgrid, for at kunne placere den
 
-`````CSS
-![s1](/public/s1.png)
-
+![s1](./public/s1.png)
 
 **Selectorer**
 Jeg føler ikke jeg har den samme grundforståelse for kode, som er forventet. Jeg er interesseret i at bruge selectorer noget mere, men er ikke rigtigt blevet præsenteret for dem, andet det vi blev i starten af valgfaget. Jeg vil dog gerne blive bedre til at bruge dem.
@@ -44,4 +42,4 @@ Dertil kommer container queries hvilket jeg lige skal tænke mig om, en ekstra g
 
 Jeg synes allerede at valgfaget kan være en lille smule udfordrende - På den gode måde.
 Indtil nu har jeg følt, at jeg ikke har været specielt udfordret, så det er mega fedt, at få testet mine evner, selvom der har været virkelig meget, på kort tid.
-`````
+````
