@@ -62,6 +62,8 @@
 
   h1,
   .heading1 {
+    --flow-space: var(--space-2xl);
+
     color: var(--text-color);
     font-family: var(--PrimaryFont);
     line-height: 1.3;
@@ -70,6 +72,8 @@
 
   h2,
   .heading2 {
+    --flow-space: var(--space-l);
+
     color: var(--text-color);
     font-family: var(--PrimaryFont);
     line-height: 1.3;
@@ -77,6 +81,7 @@
   }
   h3,
   .heading3 {
+    --flow-space: var(--space-l);
     color: var(--text-color);
     font-family: var(--PrimaryFont);
     line-height: 1.3;
@@ -84,6 +89,8 @@
   }
   h4,
   .heading4 {
+    --flow-space: var(--space-m);
+
     color: var(--text-color);
     font-family: var(--PrimaryFont);
     line-height: 1.3;
@@ -91,6 +98,8 @@
   }
   h5,
   .heading5 {
+    --flow-space: var(--space-m);
+
     color: var(--text-color);
     font-family: var(--PrimaryFont);
     line-height: 1.3;
@@ -98,6 +107,8 @@
   }
   h6,
   .heading6 {
+    --flow-space: var(--space-s);
+
     color: var(--text-color);
     font-family: var(--PrimaryFont);
     line-height: 1.3;
@@ -106,6 +117,8 @@
 
   p,
   .body {
+    --flow-space: var(--space-2xs);
+
     color: var(--text-color);
     font-family: var(--SecondaryFont);
     font-size: var(--body);
@@ -115,13 +128,24 @@
 
   a {
     text-decoration: none;
-    color: var(--white);
+    color: var(--text-color);
     font-size: var(--body);
   }
 
   li {
+    --flow-space: var(--space-2xs);
     color: var(--text-color);
     font-family: var(--SecondaryFont);
     font-size: var(--body);
+  }
+
+  .flow-space {
+    > * + * {
+      margin-block-start: var(--flow-space, 1em);
+    }
+  }
+
+  .section-margin-top {
+    margin-top: 6rem;
   }
 }

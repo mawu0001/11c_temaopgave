@@ -2,7 +2,7 @@
 
 ---
 
-<section>
+<section class="section-margin-top">
   <article>
     <h4>Subscribe Our Newsletter</h4>
     <p>Build stronger Customer Relationships with Consultalk</p>
@@ -27,6 +27,7 @@
       position: relative;
       margin-bottom: 4rem;
       /* flow space el. margin var */
+      container-type: inline-size;
 
       overflow: clip;
       isolation: isolate;
@@ -117,6 +118,13 @@
           background-color: oklch(from var(--yellow) calc(l - 0.8) c h);
           color: var(--white);
           border: 1px solid var(--white);
+        }
+      }
+
+      @container (width <= 800px) {
+        form {
+          flex-direction: column;
+          place-items: start;
         }
       }
     }

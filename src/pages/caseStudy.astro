@@ -15,26 +15,28 @@ import img from "../assets/images/case1.png";
     img={img}
   />
 
-  <section>
-    <Image class="img" src={img1} alt="xxxxx" />
-    <div class="localbar">
-      <ul role="list">
-        <li>
-          <h6>Case Name</h6>
-          <p>Taxes & Efficiency</p>
-        </li>
-        <li>
-          <h6>Category</h6>
-          <p>Business</p>
-        </li>
-        <li>
-          <h6>Date</h6>
-          <p>27th September 2022</p>
-        </li>
-      </ul>
-      <button>Live Preview</button>
+  <section class="section-margin-top">
+    <div class="localhero">
+      <Image src={img1} alt="xxxxx" />
+      <div class="localbar">
+        <ul role="list">
+          <li>
+            <h6>Case Name</h6>
+            <p>Taxes & Efficiency</p>
+          </li>
+          <li>
+            <h6>Category</h6>
+            <p>Business</p>
+          </li>
+          <li>
+            <h6>Date</h6>
+            <p>27th September 2022</p>
+          </li>
+        </ul>
+        <button>Live Preview</button>
+      </div>
     </div>
-    <article>
+    <article class="flow-space">
       <h3>Project Overview</h3>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -120,6 +122,21 @@ import img from "../assets/images/case1.png";
         grid-column: text;
       }
 
+      article h3 {
+        margin-block-start: var(--flow-space);
+      }
+
+      .localhero {
+        grid-column: fill;
+        grid-template-columns: subgrid;
+        display: grid;
+        grid-template-rows: repeat(5, auto);
+      }
+      img {
+        border-radius: 2rem;
+        grid-column: fill;
+        grid-row: 1 / span 4;
+      }
       .localbar {
         grid-column: elements;
         background: var(--black);
@@ -129,6 +146,9 @@ import img from "../assets/images/case1.png";
         border-radius: 2rem;
         padding: 2rem;
         place-items: center;
+        grid-row: 4 / -1;
+        z-index: 1;
+        height: fit-content;
 
         ul {
           display: flex;
@@ -147,10 +167,7 @@ import img from "../assets/images/case1.png";
           padding: 1rem;
         }
       }
-      img {
-        border-radius: 2rem;
-        grid-column: fill;
-      }
+
       .img {
         border-radius: 0;
         padding: 0 2rem;

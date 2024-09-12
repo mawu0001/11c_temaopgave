@@ -5,7 +5,7 @@ import sarah from "../assets/images/sarah2.png";
 ---
 
 <section class="full-bleed" id="hero-grid">
-  <article>
+  <article class="flow-space">
     <h1>Adam Buschemia Business Consultant</h1>
     <p>
       Get help from Alex Moore, a professional business coach with advanced
@@ -26,7 +26,7 @@ import sarah from "../assets/images/sarah2.png";
       position: relative;
 
       &::before {
-        --square-count: 15;
+        --square-count: 13;
         --square-size: 1.34rem;
 
         --_square-size: var(--square-size, 1rem);
@@ -35,8 +35,8 @@ import sarah from "../assets/images/sarah2.png";
         z-index: 2;
         content: "";
         position: absolute;
-        top: 18%;
-        left: -8%;
+        top: 23%;
+        left: -12%;
         inline-size: calc(
           round(var(--_square-sum), var(--_square-size)) - var(--_square-half)
         );
@@ -61,7 +61,7 @@ import sarah from "../assets/images/sarah2.png";
       }
 
       &::after {
-        --square-count: 8;
+        --square-count: 15;
         --square-size: 1.34rem;
 
         --_square-size: var(--square-size, 1rem);
@@ -70,8 +70,8 @@ import sarah from "../assets/images/sarah2.png";
         z-index: 2;
         content: "";
         position: absolute;
-        left: 40%;
-        top: 5%;
+        left: 45%;
+        top: -45%;
         inline-size: calc(
           round(var(--_square-sum), var(--_square-size)) - var(--_square-half)
         );
@@ -95,12 +95,21 @@ import sarah from "../assets/images/sarah2.png";
       }
 
       article {
-        color: var(--white);
+        /* color: var(--white); */
         grid-column: 2;
         padding: var(--section-padding) 0;
 
         h1 {
           color: var(--white);
+          margin-top: var(--flow-space);
+        }
+        p {
+          color: var(--white);
+        }
+        button {
+          background: var(--white);
+          border-radius: 2rem;
+          padding: 1rem;
         }
       }
 

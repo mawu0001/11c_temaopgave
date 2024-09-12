@@ -4,9 +4,9 @@ import { Icon } from "astro-icon/components";
 const { data } = Astro.props;
 ---
 
-<section>
+<section class="section-margin-top">
   <article>
-    <header>
+    <header class="flow-space">
       <Icon name="finpro" />
       <h2>{data.title}</h2>
       <p>
@@ -26,6 +26,7 @@ const { data } = Astro.props;
 <style>
   section {
     display: grid;
+    grid-column: content / full-end;
     grid-template-columns: var(--grid-columns);
     padding: var(--section-padding) 0;
   }

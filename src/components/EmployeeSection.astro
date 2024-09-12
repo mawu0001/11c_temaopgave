@@ -7,7 +7,7 @@ const { data, theme, title, subtitel, Bannertext } = Astro.props;
 
 <section>
   <div class="headsection">
-    <div class="header">
+    <div class="header" class="flow-space">
       <Banner text={Bannertext} theme="yellow" />
       <h2>{title}</h2>
       <p>
@@ -33,6 +33,7 @@ const { data, theme, title, subtitel, Bannertext } = Astro.props;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
+      margin-top: 2rem;
     }
     .headsection {
       display: flex;
@@ -41,6 +42,11 @@ const { data, theme, title, subtitel, Bannertext } = Astro.props;
     }
     .header {
       max-width: 65ch;
+
+      h2,
+      p {
+        margin-block-start: var(--flow-space);
+      }
     }
     button {
       background: var(--black);

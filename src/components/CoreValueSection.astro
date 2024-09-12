@@ -8,9 +8,12 @@ const { data, theme, icon } = Astro.props;
 <section class="full-bleed" data-theme={theme}>
   <article>
     <header>
-      <Banner text="Growing with our Clients" theme="yellow" />
-      <h2>{data.title}</h2>
-      <p>{data.subtitle}</p>
+      <div class="flow-space">
+        <Banner text="Growing with our Clients" theme="yellow" />
+        <h2>{data.title}</h2>
+        <p>{data.subtitle}</p>
+      </div>
+      <button data-theme={theme}>Get in touch</button>
     </header>
     <ul>
       {data.values.map((corevalues) => <CoreValueCard {corevalues} />)}
@@ -25,6 +28,8 @@ const { data, theme, icon } = Astro.props;
     --bg-card: var(--grey);
     --card-text: var(--white);
     /* brød tekst: #595566 */
+    --button-color: var(--black);
+    --bg-button: var(--white);
   }
   section {
     display: grid;
@@ -34,9 +39,20 @@ const { data, theme, icon } = Astro.props;
     padding: var(--section-padding) 0;
 
     header {
+      display: flex;
+      justify-content: space-between;
+      place-items: end;
       h2,
       p {
         color: var(--card-text, var(--text-color));
+      }
+
+      button {
+        background: var(--bg-button, var(--black));
+        color: var(--button-color, var(--white));
+        border-radius: 2rem;
+        padding: 1rem;
+        height: fit-content;
       }
     }
   }

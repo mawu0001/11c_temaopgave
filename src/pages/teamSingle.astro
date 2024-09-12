@@ -10,8 +10,8 @@ const employeeData = await fetch(url).then((res) => res.json());
 
 <BaseLayout title="Employee">
   <section>
-    <article class="content">
-      <div class="localhead">
+    <article class="content" class="flow-space">
+      <div class="localhead" class="flow-space">
         <h4>{employeeData[0].name}</h4>
         <h6>{employeeData[0].title}</h6>
 
@@ -134,6 +134,11 @@ const employeeData = await fetch(url).then((res) => res.json());
         aspect-ratio: 1/1;
         border-radius: 2rem;
       }
+    }
+    h4,
+    h6,
+    p {
+      margin-block-start: var(--flow-space);
     }
   }
 </style>

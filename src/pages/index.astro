@@ -6,6 +6,7 @@ import NewsLetter from "../components/NewsLetter.astro";
 import HeroHome from "../components/HeroHome.astro";
 import Expect from "../components/Expect.astro";
 import Experience from "../components/Experience.astro";
+import CardBarHome from "../components/CardBarHome.astro";
 
 const url_projections =
   "https://raw.githubusercontent.com/mawu0001/frontend-design/main/resources/json/projections.json";
@@ -17,10 +18,32 @@ const coreValues = await fetch(url_corevalues).then((res) => res.json());
 ---
 
 <BaseLayout title="Home">
-  <HeroHome />
+  <div class="full-bleed">
+    <HeroHome />
+    <CardBarHome />
+  </div>
   <Expect />
   <ProjectionsSection data={projection} />
   <Experience />
   <CoreValueSection data={coreValues} theme="dark" />
   <NewsLetter />
 </BaseLayout>
+
+<style>
+  @layer components {
+    div {
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-template-rows: repeat(6, auto);
+
+      #hero-grid {
+        grid-row: 1 / span 4;
+      }
+
+      #Cardbar {
+        grid-row: 4 / -1;
+        z-index: 3;
+      }
+    }
+  }
+</style>
