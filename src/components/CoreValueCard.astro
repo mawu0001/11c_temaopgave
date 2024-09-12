@@ -8,13 +8,15 @@ import { Icon } from "astro-icon/components";
   <Icon name={icon} />
   <h6>{title}</h6>
   <p>{description}</p>
+  <p class="bold">Read More <span> &#8594; </span></p>
 </li>
 
 <style>
   li {
     list-style: none;
-    flex-basis: min(400px, 90%);
-    flex-shrink: 0;
+    /* flex-basis: min(400px, 90%);
+    flex-shrink: 0; */
+    width: max(0, 400px);
     background: var(--white);
     color: var(--black);
     border-radius: 2rem;
@@ -23,6 +25,10 @@ import { Icon } from "astro-icon/components";
     [data-icon] {
       height: 50px;
       width: 50px;
+    }
+
+    .bold {
+      font-weight: 700;
     }
   }
 </style>

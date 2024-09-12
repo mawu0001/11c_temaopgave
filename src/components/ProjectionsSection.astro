@@ -13,7 +13,7 @@ const { data } = Astro.props;
         {data.subtitle}
       </p>
     </header>
-    <ul class="full-width">
+    <ul class="full-width" role="list">
       {
         data.values.map((financialProjections) => (
           <ProjectionsCard {financialProjections} />
@@ -44,12 +44,11 @@ const { data } = Astro.props;
       }
     }
     > ul {
-      list-style: none;
+      grid-column: full;
 
       display: flex;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      grid-column: full;
       padding-inline: minmax(1rem, 50% - var(--content-width) / 2);
       gap: 2rem;
     }
