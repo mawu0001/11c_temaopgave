@@ -26,8 +26,7 @@
       gap: 5rem;
       position: relative;
       margin-bottom: 4rem;
-      /* flow space el. margin var */
-      container-type: inline-size;
+      /* container-type: inline-size; */
 
       overflow: clip;
       isolation: isolate;
@@ -121,10 +120,8 @@
         }
       }
 
-      @container (width <= 800px) {
-        form {
-          flex-direction: column;
-          place-items: start;
+      @container (width < 800px) {
+        article {
         }
       }
     }

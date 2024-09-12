@@ -8,7 +8,7 @@ const url =
 const employeeData = await fetch(url).then((res) => res.json());
 ---
 
-<BaseLayout title="Employee">
+<BaseLayout class="base" title="Employee">
   <section>
     <article class="content" class="flow-space">
       <div class="localhead" class="flow-space">
@@ -45,6 +45,14 @@ const employeeData = await fetch(url).then((res) => res.json());
 
 <style>
   @layer component {
+    .base {
+      container-type: inline-size;
+    }
+    @container .base (width<800px) {
+      section {
+        flex-direction: column;
+      }
+    }
     section {
       display: flex;
       flex-direction: row;

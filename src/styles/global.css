@@ -132,13 +132,18 @@
     font-size: var(--body);
   }
 
-  li {
+  li,
+  dl {
     --flow-space: var(--space-2xs);
     color: var(--text-color);
     font-family: var(--SecondaryFont);
     font-size: var(--body);
   }
 
+  dd,
+  dt {
+    font-size: var(--body);
+  }
   .flow-space {
     > * + * {
       margin-block-start: var(--flow-space, 1em);

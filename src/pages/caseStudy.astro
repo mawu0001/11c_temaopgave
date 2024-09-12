@@ -118,6 +118,8 @@ import img from "../assets/images/case1.png";
         [elements-end] var(--fill)
         [fill-end];
 
+      container-type: inline-size;
+
       > * {
         grid-column: text;
       }
@@ -171,6 +173,12 @@ import img from "../assets/images/case1.png";
       .img {
         border-radius: 0;
         padding: 0 2rem;
+      }
+
+      @container (width<800px) {
+        article {
+          grid-column: elements;
+        }
       }
     }
   }

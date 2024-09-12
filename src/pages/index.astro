@@ -17,7 +17,7 @@ const url_corevalues =
 const coreValues = await fetch(url_corevalues).then((res) => res.json());
 ---
 
-<BaseLayout title="Home">
+<BaseLayout title="Home" class="baselayout">
   <div class="full-bleed">
     <HeroHome />
     <CardBarHome />
@@ -51,6 +51,15 @@ const coreValues = await fetch(url_corevalues).then((res) => res.json());
         #cardbar {
           flex-direction: column;
           grid-row: 5;
+        }
+      }
+    }
+    .base-layout {
+      container-type: inline-size;
+
+      @container (width < 800px) {
+        .expect-section {
+          display: initial;
         }
       }
     }
