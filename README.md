@@ -31,20 +31,14 @@ Nesting har jeg følt har været det mest simple, vi har lært indtil videre. Se
 
 Dertil kommer container queries hvilket jeg lige skal tænke mig om, en ekstra gang, da i dette tilfælde, så forholder `#cardbar`sig ikke til hele viewporten, men fx. kun den omkringliggende `<div/>`.
 
-````@container (width < 800px) {
+`@container (width < 800px) {
 #cardbar {
 flex-direction: column;
 grid-row: 5;
 }
-}```
+}`
 
 #### Overordnet reflektion
 
 Jeg synes allerede at valgfaget kan være en lille smule udfordrende - På den gode måde.
 Indtil nu har jeg følt, at jeg ikke har været specielt udfordret, så det er mega fedt, at få testet mine evner, selvom der har været virkelig meget, på kort tid.
-
-````
-
-```
-
-```
