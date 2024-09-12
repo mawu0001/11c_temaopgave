@@ -35,9 +35,10 @@ const coreValues = await fetch(url_corevalues).then((res) => res.json());
       display: grid;
       grid-template-columns: subgrid;
       grid-template-rows: repeat(6, auto);
-      container-type: inline-size;
+      /* container-type: inline-size; */
 
       #hero-grid {
+        grid-column: full;
         grid-row: 1 / span 4;
       }
 
