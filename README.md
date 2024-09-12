@@ -18,8 +18,10 @@ Jeg synes `@Layers` er mega smart, det kræver dog lidt tilvænning at bruge. N�
 **SubGrid**
 
 Lidt ligesom `@Layers` synes jeg det er lidt svært at bruge subgrid, da man skal have defineret et fyldestgørende grid fra starten af.
-Jeg har sat et grid op på CaseStudy siden, og et dertilhørende subgrid, for at kunne placere den
-|![s1](./public/s1.png)|![s2](./public/s2.png)|![s3](./public/s3.png)|
+Jeg har sat et grid op på CaseStudy siden, og et dertilhørende subgrid, for at kunne placere den `.localbar`halvt ovenpå sidens Hero section.
+![s1](./public/s1.png)
+![s2](./public/s2.png)
+![s3](./public/s3.png)
 
 **Selectorer**
 Jeg føler ikke jeg har den samme grundforståelse for kode, som er forventet. Jeg er interesseret i at bruge selectorer noget mere, men er ikke rigtigt blevet præsenteret for dem, andet det vi blev i starten af valgfaget. Jeg vil dog gerne blive bedre til at bruge dem.
